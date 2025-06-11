@@ -1,0 +1,17 @@
+# ID, 이름, 종류, 즐겨찾기수, 주소, 리뷰_평균_점수 조회
+SELECT I.REST_ID,
+    I.REST_NAME,
+    I.FOOD_TYPE,
+    I.FAVORITES,
+    I.ADDRESS,
+    ROUND(AVG(R.REVIEW_SCORE), 2) AS SCORE
+FROM REST_INFO I
+# 조인 시작
+JOIN REST_REVIEW R
+ON I.REST_ID = R.REST_ID
+# '서울'에 위치한
+WHERE ADDRESS LIKE '서울%'
+# 그룹 묶어주기
+GROUP BY I.REST_ID
+# 리뷰_평균_점수 내림차, 즐겨찾기수 내림차
+ORDER BY SCORE DESC, I.FAVORITES DESC

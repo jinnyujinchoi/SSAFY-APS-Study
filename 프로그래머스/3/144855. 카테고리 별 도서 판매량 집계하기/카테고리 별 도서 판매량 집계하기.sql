@@ -1,0 +1,12 @@
+-- 카테고리, 총판매량 조회 --
+SELECT CATEGORY, SUM(SALES) AS TOTAL_SALES
+FROM BOOK
+-- 조인 시작 --
+JOIN BOOK_SALES AS SALES
+ON BOOK.BOOK_ID = SALES.BOOK_ID
+-- 조건1. '1월' 판매량 --
+WHERE MONTH(SALES_DATE) = 1
+-- 카테고리로 그룹화 --
+GROUP BY BOOK.CATEGORY
+-- 카테고리명 기준 오름차 --
+ORDER BY BOOK.CATEGORY

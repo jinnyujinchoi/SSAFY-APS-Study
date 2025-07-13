@@ -1,0 +1,11 @@
+-- 물고기 이름, 잡은 수 --
+SELECT COUNT(*) AS FISH_COUNT,
+    N.FISH_NAME AS FISH_NAME
+FROM FISH_INFO I
+-- 조인 시작 --
+JOIN FISH_NAME_INFO N
+ON I.FISH_TYPE = N.FISH_TYPE
+-- 이름으로 묶어 주기 --
+GROUP BY N.FISH_NAME
+-- 잡은 수 내림차 --
+ORDER BY FISH_COUNT DESC;

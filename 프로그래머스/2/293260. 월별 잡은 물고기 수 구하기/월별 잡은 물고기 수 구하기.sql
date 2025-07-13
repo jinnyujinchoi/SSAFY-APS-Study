@@ -1,0 +1,8 @@
+-- 잡은 물고기 수, 월 조회 --
+SELECT COUNT(*) AS FISH_COUNT,
+    MONTH(TIME) AS MONTH
+FROM FISH_INFO
+-- 월로 묶어주기 --
+GROUP BY MONTH(TIME)
+-- 월 기준 오름차 --
+ORDER BY MONTH(TIME)

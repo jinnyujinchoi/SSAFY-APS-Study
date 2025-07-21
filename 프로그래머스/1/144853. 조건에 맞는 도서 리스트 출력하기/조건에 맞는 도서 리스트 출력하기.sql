@@ -1,0 +1,9 @@
+-- 도서 ID, 출판일 출력 --
+SELECT BOOK_ID, DATE_FORMAT(PUBLISHED_DATE, "%Y-%m-%d")
+FROM BOOK
+-- 2021년에 출판 --
+WHERE YEAR(PUBLISHED_DATE) = 2021
+-- 인문 카테고리 --
+    AND CATEGORY = '인문'
+-- 출판일 기준 오름차
+ORDER BY PUBLISHED_DATE ASC;

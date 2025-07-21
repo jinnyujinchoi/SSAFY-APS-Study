@@ -1,0 +1,5 @@
+-- 맛 출력 --
+SELECT FLAVOR
+FROM FIRST_HALF
+-- 총주문량 내림차, 출하번호 오름차 --
+ORDER BY TOTAL_ORDER DESC, SHIPMENT_ID ASC;

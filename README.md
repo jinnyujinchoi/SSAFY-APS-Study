@@ -1,2 +1,2 @@
-# SSAFY-APS-Study
-SSAFY 13th seoul01 Algorithm study
+# APS-Study
+알고리즘 해결 능력을 기르는 레포지토리!입니다.
